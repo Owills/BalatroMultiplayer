@@ -36,10 +36,30 @@ FNSJ.simulate_mp_cutdown = function(joker_obj, context)
 			local cards_remaining_in_hand = #G.hand.cards
 			local cards_being_played = #G.play.cards
 			local hand_size_before_playing = cards_remaining_in_hand + cards_being_played
-			local retrigger_amount = math.max(0, starting_hand_size - hand_size_before_playing)
+			local retrigger_amount = math.max(0, starting_hand_size - hand_size_before_playing) * 2
 			if retrigger_amount > 0 then
 				FN.SIM.add_reps(retrigger_amount)
 			end
+		end
+	end
+end
+
+FNSJ.simulate_mp_order_of_operations = function(joker_obj, context)
+	if context.cardarea == G.jokers and context.before then
+		local total_mult = 0
+		for i = 1, #FN.SIM.env.jokers do
+			local other_joker = FN.SIM.env.jokers[i]
+			if other_joker ~= joker_obj and not other_joker.debuff then
+				if other_joker.ability.mult and other_joker.ability.mult > 0 then
+					total_mult = total_mult + other_joker.ability.mult
+				end
+				if other_joker.ability.t_mult and other_joker.ability.t_mult > 0 then
+					total_mult = total_mult + other_joker.ability.t_mult
+				end
+			end
+		end
+		if total_mult > 0 then
+			FN.SIM.add_mult(total_mult)
 		end
 	end
 end

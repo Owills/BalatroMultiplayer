@@ -148,6 +148,14 @@ return {
 					"{C:inactive}(Currently {C:attention}#1#{C:inactive} retriggers)",
 				},
 			},
+			j_mp_order_of_operations = {
+				name = "Order of Operations",
+				text = {
+					"Applies {C:mult}Mult{} from other Jokers",
+					"{C:attention}before{} the hand is scored",
+					"{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
+				},
+			},
 			j_mp_magnet_sandbox = {
 				name = "Magnet",
 				text = {
