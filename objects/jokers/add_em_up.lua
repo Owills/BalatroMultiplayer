@@ -34,7 +34,10 @@ SMODS.Joker({
 				-- Only apply once, check if either card has been modified
 				if not first_card.ability._add_em_up_applied and not second_card.ability._add_em_up_applied then
 					-- Add second card's printed number to first card's printed number
-					local new_id = (first_card.base.id + second_card.base.id) % 14
+					local first_id = first_card.base.id == 14 and 1 or first_card.base.id
+					local second_id = second_card.base.id == 14 and 1 or second_card.base.id
+					local wrap_adder = first_id + second_id > 13 and 1 or 0
+					local new_id = (first_id + second_id) % 14 + wrap_adder
 					if new_id == 0 then new_id = 14 end  -- Handle modulo edge case
 					
 					-- Convert numeric id to card value string
