@@ -121,6 +121,14 @@ return {
 					"{C:attention}#1#{} additional time",
 				},
 			},
+			j_mp_add_em_up = {
+				name = "Add 'Em Up",
+				text = {
+					"If the first hand of the round contains exactly two cards,",
+					"add the printed number of the second card to the first",
+					"permanently for the rest of the game.",
+				},
+			},
 			j_mp_bloodstone = {
 				name = "Bloodstone",
 				text = {
