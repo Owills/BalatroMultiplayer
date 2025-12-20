@@ -29,6 +29,21 @@ FNSJ.simulate_mp_hanging_chad = function(joker_obj, context)
 	end
 end
 
+FNSJ.simulate_mp_cutdown = function(joker_obj, context)
+	if context.cardarea == G.play and context.repetition then
+		if context.other_card == context.scoring_hand[1] and not context.other_card.debuff then
+			local starting_hand_size = G.GAME.starting_params.hand_size or 8
+			local cards_remaining_in_hand = #G.hand.cards
+			local cards_being_played = #G.play.cards
+			local hand_size_before_playing = cards_remaining_in_hand + cards_being_played
+			local retrigger_amount = math.max(0, starting_hand_size - hand_size_before_playing)
+			if retrigger_amount > 0 then
+				FN.SIM.add_reps(retrigger_amount)
+			end
+		end
+	end
+end
+
 FNSJ.simulate_mp_lets_go_gambling = function(joker_obj, context)
 	if context.cardarea == G.jokers and context.global then
 		local rand = pseudorandom("gambling") -- Must reuse same pseudorandom value:
