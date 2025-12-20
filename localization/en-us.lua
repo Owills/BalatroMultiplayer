@@ -130,6 +130,16 @@ return {
 					"{X:mult,C:white} X#3# {} Mult when scored",
 				},
 			},
+			j_mp_cutdown = {
+				name = "Cutdown",
+				text = {
+					"For each card you are below your",
+					"{C:attention}starting hand size{} when the hand begins,",
+					"retrigger the {C:attention}first{} played card",
+					"{C:attention}2{} additional times",
+					"{C:inactive}(Currently {C:attention}#1#{C:inactive} retriggers)",
+				},
+			},
 			j_mp_magnet_sandbox = {
 				name = "Magnet",
 				text = {
