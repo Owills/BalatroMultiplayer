@@ -15,7 +15,7 @@ SMODS.Joker({
 	eternal_compat = true,
 	rarity = 2,
 	cost = 6,
-	config = { extra = { x_mult = 1, x_mult_gain = 0.5, last_hand_score = 0 } },
+	config = { extra = { x_mult = 1, x_mult_gain = 0.33, last_hand_score = 0 } },
 	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.x_mult, card.ability.extra.x_mult_gain } }
 	end,
@@ -45,7 +45,7 @@ SMODS.Joker({
 			if G.GAME.chips >= G.GAME.blind.chips then
 				-- Check if the last hand scored less than the blind requirement
 				if card.ability.extra.last_hand_score < G.GAME.blind.chips and card.ability.extra.last_hand_score > 0 then
-					card.ability.extra.x_mult = card.ability.extra.x_mult + card.ability.extra.x_mult_gain
+					card.ability.extra.x_mult = math.floor((card.ability.extra.x_mult + card.ability.extra.x_mult_gain) * 100 + 0.5) / 100
 					return {
 						message = localize('k_upgrade_ex'),
 						colour = G.C.RED,
