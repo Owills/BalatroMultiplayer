@@ -14,7 +14,7 @@ SMODS.Joker({
     blueprint_compat = true,
     perishable_compat = true,
     eternal_compat = true,
-    rarity = 2,
+    rarity = 1,
     cost = 4,
 	config = { extra = 1, mp_sticker_balanced = true },
 	loc_vars = function(self, info_queue, card)

@@ -851,3 +851,4 @@ end
 function MP.UTILS.is_weekly(arg)
 	return MP.UTILS.get_weekly() == arg and MP.LOBBY.config.ruleset == "ruleset_mp_weekly"
 end
+

@@ -129,6 +129,14 @@ return {
 					"permanently for the rest of the game.",
 				},
 			},
+			j_mp_peeping_joker = {
+				name = "Peeping Joker",
+				text = {
+					"During the {C:attention}select blind{} phase,",
+					"you can see what's in the next",
+					"{C:attention}skip tag{} that appears",
+				},
+			},
 			j_mp_bloodstone = {
 				name = "Bloodstone",
 				text = {
