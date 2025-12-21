@@ -152,7 +152,6 @@ return {
 				text = {
 					"Applies {C:mult}Mult{} from other Jokers",
 					"{C:attention}before{} the hand is scored",
-					"{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
 				},
 			},
 			j_mp_magnet_sandbox = {
