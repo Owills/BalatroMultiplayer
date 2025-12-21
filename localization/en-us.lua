@@ -22,7 +22,6 @@ return {
 					"After defeating",
 					"the Boss Blind, gain:",
 					"{C:money}$#1#{} + {C:money}$#2#{} per Ante",
-					"{C:inactive}(Currently {C:money}$#3#{C:inactive})",
 				},
 			},
 		},
@@ -148,8 +147,8 @@ return {
 					"{C:inactive}(Currently {C:attention}#1#{C:inactive} retriggers)",
 				},
 			},
-			j_mp_order_of_operations = {
-				name = "Order of Operations",
+			j_mp_pemdas = {
+				name = "PEMDAS",
 				text = {
 					"Applies {C:mult}Mult{} from other Jokers",
 					"{C:attention}before{} the hand is scored",

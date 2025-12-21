@@ -1,6 +1,6 @@
 SMODS.Atlas({
-	key = "order_of_operations",
-	path = "j_order_of_operations.png",
+	key = "pemdas",
+	path = "j_pemdas.png",
 	px = 71,
 	py = 95,
 })
@@ -9,8 +9,8 @@ SMODS.Atlas({
 local eval_card_ref = eval_card
 function eval_card(card, context)
 	if context.joker_main and not context.blueprint and card.ability.set == "Joker" then
-		if card.ability.order_of_operations_skip then
-			card.ability.order_of_operations_skip = nil
+		if card.ability.pemdas_skip then
+			card.ability.pemdas_skip = nil
 			return {}, {}
 		end
 	end
@@ -18,8 +18,8 @@ function eval_card(card, context)
 end
 
 SMODS.Joker({
-	key = "order_of_operations",
-	atlas = "order_of_operations",
+	key = "pemdas",
+	atlas = "pemdas",
 	unlocked = true,
 	discovered = true,
 	blueprint_compat = false,
@@ -74,7 +74,7 @@ SMODS.Joker({
 							total_mult = total_mult + mult_to_add
 							
 							-- Mark this joker to skip later
-							other_joker.ability.order_of_operations_skip = true
+							other_joker.ability.pemdas_skip = true
 							
 							-- Show the other joker triggering
 							card_eval_status_text(other_joker, 'jokers', nil, nil, nil, {
@@ -104,8 +104,8 @@ SMODS.Joker({
 			
 			-- Clean up any remaining skip flags
 			for i = 1, #G.jokers.cards do
-				if G.jokers.cards[i].ability.order_of_operations_skip then
-					G.jokers.cards[i].ability.order_of_operations_skip = nil
+				if G.jokers.cards[i].ability.pemdas_skip then
+					G.jokers.cards[i].ability.pemdas_skip = nil
 				end
 			end
 		end

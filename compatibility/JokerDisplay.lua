@@ -153,7 +153,7 @@ if SMODS.Mods["JokerDisplay"] and SMODS.Mods["JokerDisplay"].can_load then
 				return retrigger_amount * JokerDisplay.calculate_joker_triggers(joker_card)
 			end,
 		}
-		jd_def["j_mp_order_of_operations"] = {
+		jd_def["j_mp_pemdas"] = {
 			text = {
 				{ text = "+" },
 				{ ref_table = "card.ability.extra", ref_value = "mult_bonus", colour = G.C.MULT },

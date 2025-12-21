@@ -44,7 +44,7 @@ FNSJ.simulate_mp_cutdown = function(joker_obj, context)
 	end
 end
 
-FNSJ.simulate_mp_order_of_operations = function(joker_obj, context)
+FNSJ.simulate_mp_pemdas = function(joker_obj, context)
 	if context.cardarea == G.jokers and context.before then
 		local total_mult = 0
 		for i = 1, #FN.SIM.env.jokers do
