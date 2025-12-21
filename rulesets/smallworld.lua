@@ -38,10 +38,20 @@ function MP.ApplyBans()
 		local requires = {}
 		for k, v in pairs(G.P_CENTERS) do
 			if v.set and not G.GAME.banned_keys[k] and not (v.requires or v.hidden) then
-				local index = v.set .. (v.rarity or "")
-				tables[index] = tables[index] or {}
-				local t = tables[index]
-				t[#t + 1] = k
+				-- Exempt specific jokers from being banned
+				local exempt_jokers = {
+					["j_mp_cutdown"] = true,
+					["j_mp_edging_joker"] = true,
+					["j_mp_pemdas"] = true,
+					["j_mp_add_em_up"] = true,
+				}
+				
+				if not exempt_jokers[k] then
+					local index = v.set .. (v.rarity or "")
+					tables[index] = tables[index] or {}
+					local t = tables[index]
+					t[#t + 1] = k
+				end
 			end
 			if v.set == "Voucher" and v.requires then requires[#requires + 1] = k end
 		end
