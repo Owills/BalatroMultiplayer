@@ -154,6 +154,15 @@ return {
 					"{C:attention}before{} the hand is scored",
 				},
 			},
+			j_mp_edging_joker = {
+				name = "Edging Joker",
+				text = {
+					"{X:mult,C:white}X#1#{} Mult",
+					"Gains {X:mult,C:white}X#2#{} Mult if you beat",
+					"a round with a hand that scores",
+					"{C:attention}less{} than the Blind requirement",
+				},
+			},
 			j_mp_magnet_sandbox = {
 				name = "Magnet",
 				text = {
